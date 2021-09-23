@@ -1,8 +1,18 @@
 import React from 'react'
 
 function TodoButton() {
+
+  const click = () => {
+    alert('Hola');
+  }
+
   return (
-    <button className='CreateTodoButton'>+</button>
+    <button
+      className='CreateTodoButton'
+      onClick={click}
+    >
+      +
+    </button>
   )
 }
 
