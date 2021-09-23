@@ -2,7 +2,7 @@ import React from 'react'
 
 function TodoButton() {
   return (
-    <button>+</button>
+    <button className='CreateTodoButton'>+</button>
   )
 }
 

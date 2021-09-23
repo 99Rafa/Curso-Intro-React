@@ -3,7 +3,7 @@ import React from 'react'
 function TodoSearch() {
   return (
     <>
-      <input type="text" placeholder='Cebolla' />
+      <input className='TodoSearch' type="text" placeholder='Cebolla' />
     </>
   )
 }
