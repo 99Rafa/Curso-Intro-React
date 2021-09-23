@@ -51,8 +51,8 @@ ul {
     position: absolute;
     top: -24px;
     right: 0;
-}
 
-.Icon-delete:hover {
-    color: red;
+    &:hover {
+        color: red;
+    }
 }
