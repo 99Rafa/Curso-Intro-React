@@ -1,19 +1,15 @@
-import React from 'react'
+import React from "react";
 
 function TodoButton() {
-
   const click = () => {
-    alert('Hola');
-  }
+    alert("Hola");
+  };
 
   return (
-    <button
-      className='CreateTodoButton'
-      onClick={click}
-    >
+    <button className="CreateTodoButton" onClick={click}>
       +
     </button>
-  )
+  );
 }
 
-export { TodoButton }
+export { TodoButton };
