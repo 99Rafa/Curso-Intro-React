@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 
-function TodoSearch() {
-  const [value, setValue] = useState("");
-
+function TodoSearch({ searchValue, setSearchValue }) {
   const onSearchValueChange = (event) => {
-    setValue(event.target.value);
+    setSearchValue(event.target.value);
   };
 
   return (
@@ -13,9 +11,9 @@ function TodoSearch() {
         className="TodoSearch"
         type="text"
         placeholder="Cebolla"
+        value={searchValue}
         onChange={onSearchValueChange}
       />
-      <p>{value}</p>
     </>
   );
 }
