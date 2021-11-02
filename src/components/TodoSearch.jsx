@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 
-function TodoSearch({ searchValue, setSearchValue }) {
+import { TodoContext } from "src/lib/context";
+
+function TodoSearch() {
+  const { searchValue, setSearchValue } = useContext(TodoContext);
+
   const onSearchValueChange = (event) => {
     setSearchValue(event.target.value);
   };

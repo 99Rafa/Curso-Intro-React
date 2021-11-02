@@ -55,4 +55,4 @@ const TodoProvider = (props) => {
   );
 };
 
-export { TodoProvider, TodoContext };
+export { TodoContext, TodoProvider };
