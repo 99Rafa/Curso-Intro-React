@@ -8,19 +8,10 @@ import { TodoCounter } from "src/components/TodoCounter";
 import { TodoItem } from "src/components/TodoItem";
 import { TodoList } from "src/components/TodoList";
 import { TodoSearch } from "src/components/TodoSearch";
+import {useLocalStorage} from "./lib/hooks/useLocalStorage";
 
 function App() {
-  const localStorageTodos = localStorage.getItem("TODOS_V1");
-  let parsedTodos;
-
-  if (!localStorageTodos) {
-    localStorage.setItem("TODOS_V1", "[]");
-    parsedTodos = [];
-  } else {
-    parsedTodos = JSON.parse(localStorageTodos);
-  }
-
-  const [todos, setTodos] = useState(parsedTodos);
+  const [todos, saveTodos] = useLocalStorage("TODOS_V1");
   const [searchValue, setSearchValue] = useState("");
 
   const completedTodos = todos.filter((todo) => todo.completed).length;
@@ -36,14 +27,9 @@ function App() {
     );
   }
 
-  const saveTodos = (newTodos) => {
-    localStorage.setItem("TODOS_V1", JSON.stringify(newTodos));
-    setTodos(newTodos);
-  };
-
   const completeTodo = (text) => {
     const todo = todos.find((t) => t.text === text);
-    todo.completed = true;
+    todo.completed = !todo.completed;
     saveTodos([...todos]);
   };
 
