@@ -1,14 +1,6 @@
 import React from "react";
 
-function TodoItem({ text, completed }) {
-  const onComplete = () => {
-    alert(`Todo completado: ${text}`);
-  };
-
-  const onDelete = () => {
-    alert(`Borraste: ${text}`);
-  };
-
+function TodoItem({ text, completed, onComplete, onDelete }) {
   return (
     <li className="TodoItem">
       <span
