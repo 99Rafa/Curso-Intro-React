@@ -7,6 +7,7 @@ import { TodoContext, TodoProvider } from "src/lib/context";
 import { Modal } from "src/components/Modal";
 import { TodoButton } from "src/components/TodoButton";
 import { TodoCounter } from "src/components/TodoCounter";
+import { TodoForm } from "src/components/TodoForm";
 import { TodoItem } from "src/components/TodoItem";
 import { TodoList } from "src/components/TodoList";
 import { TodoSearch } from "src/components/TodoSearch";
@@ -47,7 +48,7 @@ function AppUi() {
       </TodoList>
       {openModal && (
         <Modal>
-          <p>Portal</p>
+          <TodoForm />
         </Modal>
       )}
       <TodoButton />

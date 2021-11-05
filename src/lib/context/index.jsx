@@ -27,6 +27,14 @@ const TodoProvider = (props) => {
     );
   }
 
+  const addTodo = (text) => {
+    todos.push({
+      completed: false,
+      text,
+    });
+    saveTodos(todos);
+  };
+
   const completeTodo = (text) => {
     const todo = todos.find((t) => t.text === text);
     todo.completed = !todo.completed;
@@ -47,6 +55,7 @@ const TodoProvider = (props) => {
         searchValue,
         setSearchValue,
         searchedTodos,
+        addTodo,
         completeTodo,
         deleteTodo,
         openModal,
